@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}{% if shop.name %} &ndash; {{ shop.name }}{% endif %}</title>
+    {{ content_for_header }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    <a class="skip-link" href="#MainContent">Skip to content</a>
+    <header class="site-header">
+      <div class="page-width">
+        <a class="site-logo" href="{{ routes.root_url }}">{{ shop.name }}</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="{{ routes.all_products_collection_url }}">Shop</a>
+          <a href="#story">Our Story</a>
+          <a href="#favorites">Favorites</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="MainContent" class="main-content">
+      {{ content_for_layout }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="page-width">
+        <p>Handpicked treasures inspired by travel and memory.</p>
+        <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</small>
+      </div>
+    </footer>
+  </body>
+</html>
