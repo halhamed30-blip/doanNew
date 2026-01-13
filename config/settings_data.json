@@ -1,0 +1,10 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "settings": {
+        "color_accent": "#c27a5a"
+      }
+    }
+  }
+}
